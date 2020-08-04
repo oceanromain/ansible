@@ -1,0 +1,13 @@
+---
+- hosts: web
+  gather_facts: yes
+  remote_user: root
+  vars_files:
+    - "/var/lib/awx/projects/test/ps.yml"
+
+  tasks:
+    - name: "Change User password"
+      user:
+        name: root
+        password: "{{ newps | password_hash('sha512') }}"
+        update_password: always
