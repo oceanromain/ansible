@@ -3,7 +3,7 @@
   gather_facts: yes
   remote_user: root
   vars_files:
-    - "/var/lib/awx/projects/test/ps.yml"
+    - "/var/lib/awx/projects/server/newpasswd.yml"
 
   tasks:
     - name: "Change User password"
